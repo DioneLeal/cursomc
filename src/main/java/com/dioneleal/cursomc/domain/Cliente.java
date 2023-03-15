@@ -56,6 +56,8 @@ public class Cliente implements Serializable {
 	@CollectionTable(name = "PERFIS")
 	private Set<Integer> Perfis = new HashSet<>();
 
+	private String imageUrl;
+
 	public Cliente() {
 		addPerfil(Perfil.CLIENTE);
 	}
@@ -167,5 +169,13 @@ public class Cliente implements Serializable {
 			return false;
 		Cliente other = (Cliente) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }
